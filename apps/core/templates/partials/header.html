@@ -1,37 +1,90 @@
-<header class="text-white py-4"style="background-color:black; position: fixed; top:0; left:0; width:100%; z-index:999;">
-    <div>
-        <h3 style="padding-left: 60px;">MOHAMMAD AMINI</h3>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Header</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000000;
+    }
 
-    <div style="text-align: center;">
-        <button type="button" class="btn btn-outline-light">Light</button>
-        <button type="button" class="btn btn-outline-light">Light</button>
-        <button type="button" class="btn btn-outline-light">Light</button>
-    </div>
-    <div>
-<style>
-.uiverse-btn {
-  padding: 1em 2em;
-  font-size: 17px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: #141313;
-  color: #f87800;
-  border: none;
-  border-radius: 10px;
-  transition: 0.3s;
-  box-shadow: 0 0 15px #444 inset, 0 0 15px #f87800;
-}
+    /* Header container */
+    .header {
+      width: 100%;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(30, 29, 29, 0.6); /* bluish dark transparency */
+      backdrop-filter: blur(6px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
 
-.uiverse-btn:hover {
-  background: #111;
-  box-shadow: 0 0 25px #f87800, 0 0 50px #f87800;
-  cursor: pointer;
-}
+    /* Name / Logo */
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      color: white;
+    }
 
-</style>
-    </div>
+    .logo span {
+      background: linear-gradient(90deg, #ff8a00, #ff4d4d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-<button class="uiverse-btn" style="float: right;margin-right: 20px;padding-bottom: 30px;">Button</button>
+    /* Navigation */
+    .nav {
+      display: flex;
+      gap: 40px;
+    }
 
-</header>
+    .nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav a:hover {
+      color: #ff914d;
+    }
+
+    .contact-btn {
+      padding: 10px 22px;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #ff8a00, #ff4d4d);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .contact-btn:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">MOHAMMAD <span>AMINI</span></div>
+
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="contact-btn" href="#contact">Contact Me</a>
+  </header>
+</body>
+</html>

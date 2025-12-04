@@ -5,8 +5,8 @@ services:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/app/core:/app/core
       - .:/app
+      - .:/apps/core/static:/app/apps/core/static
     ports:
       - "8001:8000"
     env_file:
