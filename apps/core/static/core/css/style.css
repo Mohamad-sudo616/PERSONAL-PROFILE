@@ -4,6 +4,37 @@ body {
 
 
 
+
+html{
+  scroll-behavior: smooth;
+}
+
+
+
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Scrollbar track (background) */
+::-webkit-scrollbar-track {
+  background:  #ff6200;
+}
+
+/* Scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #ff6200;
+  border-radius: 10px;
+  border: 2px solid  #ff6200;
+}
+
+
+
+
+
+
+
 .main__socials {
   display: flex;
   flex-direction: row;
@@ -296,4 +327,57 @@ body {
   100% {
     transform: translateY(0px);
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card {
+  width: 230px;
+  border-radius: 20px;
+  background: #000;
+  padding: 6px;
+  overflow: hidden;
+  box-shadow: rgba(255, 140, 0, 0.4) 0px 8px 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(255, 140, 0, 0.8) 0px 12px 30px;
+}
+
+/* Top orange section */
+.card .top-section {
+  height: 120px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #ff7a00, #ffae42);
+}
+
+/* Bottom section */
+.card .bottom-section {
+  padding: 20px 10px;
+  text-align: center;
+}
+
+/* Title only */
+.card .bottom-section .title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff8c00;
+  letter-spacing: 2px;
 }
