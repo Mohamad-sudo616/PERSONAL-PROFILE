@@ -92,63 +92,108 @@ html{
 
 
 
+/* ================= SERVICES SECTION ONLY ================= */
 
-/* From Uiverse.io by alexruix */ 
-.card {
- --background: black;
- width: 190px;
- height: 254px;
- padding: 5px;
- border-radius: 1rem;
- overflow: visible;
- background: #f7ba2b;
- background: var(--background);
- position: relative;
- z-index: 1;
+.services-section {
+  margin-top: 600px;
 }
 
-.card::after {
- position: absolute;
- content: "";
- top: 30px;
- left: 0;
- right: 0;
- z-index: -1;
- height: 100%;
- width: 100%;
- transform: scale(0.8);
- filter: blur(25px);
- background: #f7ba2b;
- background: var(--background);
- transition: opacity .5s;
+.services-section .services-title h2 {
+  color: white;
+  margin-bottom: 60px;
+  letter-spacing: 0.25em;
 }
 
-.card-info {
- --color:rgb(255, 123, 0);
- background: var(--color);
- color: var(--color);
- display: flex;
- justify-content: center;
- align-items: center;
- width: 100%;
- height: 100%;
- overflow: visible;
- border-radius: .7rem;
+/* Card Base */
+.services-section .service-card {
+  width: 320px;
+  height: 500px;
+  padding: 6px;
+  border-radius: 1rem;
+  background: black;
+  position: relative;
+  margin: auto;
+  transition: transform 0.4s ease;
 }
 
-.card .title {
- font-weight: bold;
- letter-spacing: .1em;
+/* Outer Glow */
+.services-section .service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 1.2rem;
+  background: rgba(255, 123, 0, 0.8);
+  filter: blur(30px);
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
 }
 
-/*Hover*/
-.card:hover::after {
- opacity: 0;
+/* Inner Card */
+.services-section .service-card-info {
+  background: rgb(255, 123, 0);
+  width: 100%;
+  height: 100%;
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+  transition: border 0.4s ease;
 }
 
-.card:hover .card-info {
- color: #f7ba2b;
- transition: color 1s;
+.services-section .service-card-content {
+  text-align: center;
+  padding: 30px;
+  color: black;
+}
+
+/* Icon */
+.services-section .service-icon {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+/* Title */
+.services-section .service-title {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+
+/* Description */
+.services-section .service-description {
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.4s ease;
+}
+
+/* Hover Effects */
+.services-section .service-card:hover {
+  transform: scale(1.05);
+}
+
+.services-section .service-card:hover::after {
+  opacity: 1;
+}
+
+.services-section .service-card:hover .service-card-info {
+  border: 2px solid rgba(255, 123, 0, 0.9);
+}
+
+.services-section .service-card:hover .service-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.services-section .service-icon {
+  font-size: 44px;
+  margin-bottom: 18px;
+  color: black;
+  opacity: 0.85;
 }
 
 
@@ -156,177 +201,100 @@ html{
 
 
 
-/* From Uiverse.io by ElSombrero2 */ 
-.card {
-  overflow: visible;
-  width: 190px;
-  height: 254px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Project Cards */
+.project-card .card {
+  width: 320px;
+  height: 400px;
+  margin: 20px auto;
+  perspective: 1000px;
 }
 
-.content {
+.project-card .content {
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: transform 300ms;
-  box-shadow: 0px 0px 10px 1px #ff5900ee;
-  border-radius: 5px;
+  transition: transform 0.5s;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
-.front, .back {
-  background-color: #ff6200;
+.project-card .card:hover .content {
+  transform: rotateY(180deg);
+}
+
+.project-card .front,
+.project-card .back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.back {
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.back::before {
-  position: absolute;
-  content: ' ';
-  display: block;
-  width: 160px;
-  height: 160%;
-  background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
-  animation: rotation_481 5000ms infinite linear;
-}
-
-.back-content {
-  position: absolute;
-  width: 99%;
-  height: 99%;
-  background-color: #151515;
-  border-radius: 5px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-}
-
-.card:hover .content {
-  transform: rotateY(180deg);
-}
-
-@keyframes rotation_481 {
-  0% {
-    transform: rotateZ(0deg);
-  }
-
-  0% {
-    transform: rotateZ(360deg);
-  }
-}
-
-.front {
-  transform: rotateY(180deg);
-  color: white;
-}
-
-.front .front-content {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.front-content .badge {
-  background-color: #ab111155;
-  padding: 2px 10px;
   border-radius: 10px;
-  backdrop-filter: blur(2px);
-  width: fit-content;
-}
-
-.description {
-  box-shadow: 0px 0px 10px 5px #ff6600;
-  width: 100%;
-  padding: 10px;
-  background-color: #00000099;
-  backdrop-filter: blur(5px);
-  border-radius: 5px;
-}
-
-.title {
-  font-size: 11px;
-  max-width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
-.title p {
-  width: 50%;
+.project-card .front {
+  background-color: #ff6200;
+  color: white;
 }
 
-.card-footer {
-  color: #ffffff88;
-  margin-top: 5px;
-  font-size: 8px;
+.project-card .front .logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
 }
 
-.front .img {
-  position: absolute;
+.project-card .front .logo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain;
 }
 
-.circle {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background-color: #ffbb66;
-  position: relative;
-  filter: blur(15px);
-  animation: floating 2600ms infinite linear;
+.project-card .front .title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
 }
 
-#bottom {
-  background-color: #ff8866;
-  left: 50px;
-  top: 0px;
-  width: 150px;
-  height: 150px;
-  animation-delay: -800ms;
+.project-card .back {
+  background-color: #151515;
+  color: white;
+  transform: rotateY(180deg);
+  text-align: center;
+  padding: 20px;
 }
 
-#right {
-  background-color: #ff2233;
-  left: 160px;
-  top: -80px;
-  width: 30px;
-  height: 30px;
-  animation-delay: -1800ms;
-}
-
-@keyframes floating {
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(10px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
+.project-card .back .details {
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 
